@@ -1,0 +1,326 @@
+.main-header {
+    width: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+
+.main-header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%;
+    margin: 0% auto;
+    height: 50px;
+}
+
+.main-header-menu {
+    display: flex;
+    align-items: center;
+}
+
+.burger-menu-btn {
+    width: 20px;
+    height: 20px;
+    background: none;
+    border: none;
+    position: relative;
+}
+
+.burger-menu-btn > span:nth-child(1) {
+    position: absolute;
+    width: 100%;
+    height: 1.5px;
+    top: 20%;
+    left: 0%;
+    background-color: #fff;
+    transition: all .3 ease-in-out;
+    transform-origin: center;
+}
+
+.burger-menu-btn > span:nth-child(2) {
+    position: absolute;
+    width: 100%;
+    height: 1.5px;
+    bottom: 20%;
+    left: 0%;
+    background-color: #fff;
+}
+
+.news-link {
+    margin-left: 20px;
+    font-size: 14px;
+    color: #fff;
+
+}
+
+.contact-link {
+    font-size: 14px;
+    color: #fff;
+
+}
+
+.cs-main {
+    width: 100%;
+    height: 100%;
+}
+
+.welcome-page {
+    width: 100%;
+    height: 100vh;
+    background-image: url('/static/cs/images/welcome-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+}
+
+
+
+.welcome-text {
+    width: content;
+    margin-left: 30px;
+}
+
+.welcome-title {
+    font-size: 68px;
+    color: #fff;
+    display: inline;
+}
+
+.welcome-subtitle {
+    color: #fff;
+    margin-left: 5px;
+}
+
+.welcome-btn {
+    width: 100%;
+    display: inline-flex;
+    justify-content: flex-end;
+
+}
+
+.explore-link {
+    border: 1px solid #fff;
+    padding: 7px 35px;
+    font-size: 14px;
+    margin-right: 5px;
+    margin-top: 5px;
+    color: #fff;
+    transition: all .3s ease-in-out;
+}
+
+.explore-link:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.cars-section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cars-container {
+    width: 1350px;
+    height: 540px;
+    overflow: hidden;
+}
+
+
+
+.car-images {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-position: center;
+}
+
+.pages {
+    border: 1px solid rgba(0, 0, 0, .1);
+    margin: 0px 5px;
+    padding: .1px 9px;
+    border-radius: 50%;
+}
+
+.current-page {
+    margin: 0px 5px;
+    padding: .1px 9px;
+    border-radius: 50%;
+    background-color: #000;
+}
+
+
+.gallery-section {
+    width: 100%;
+    height: 100vh;
+}
+
+.gallery-wrapper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gallery-image-container {
+    width: 50%;
+    height: 50%;
+}
+
+.gallery-image-container > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    filter: brightness(60%);
+}
+
+
+.news-section {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.news-wrapper {
+    width: 90%;
+    margin: 0% auto;
+    height: 90%;
+    display: flex;
+    align-items: center;
+}
+
+.news-text {
+    width: 50%;
+    height: 70%;
+    border: 1px solid rgba(0, 0, 0, .1);
+    position: relative;
+}
+
+.news-category {
+    width: 90%;
+    margin: 2% auto;
+}
+
+.news-category > span {
+    background: #000;
+    margin: 0px 2px;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 3px 5px;
+}
+
+.news-title {
+    width: 90%;
+    margin: 5% auto;
+}
+
+.news-descr {
+    width: 90%;
+    margin: 0% auto;
+    color: rgba(0, 0, 0, 80%);
+}
+
+.news-link {
+    width: 90%;
+    position: absolute;
+    bottom: 0%;
+    margin-left: 5%;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.news-link > a {
+    background: #000;
+    color: #fff;
+    padding: 5px 35px;
+}
+
+.news-link > span {
+    color: rgba(0, 0, 0, 50%);
+}
+
+.news-image {
+    width: 50%;
+    height: 70%;
+
+}
+
+.news-image > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+
+
+
+
+
+
+.cs-footer {
+    width: 100%;
+    height: 100vh;
+    background-color: #111111;
+}
+
+.footer-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+
+.footer-title {
+    color: #fff;
+    font-size: 68px;
+}
+
+.footer-form {
+    color: #FFF;
+    width: content;
+}
+
+.footer-subscribe {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.footer-email-input {
+    width: 40%;
+    height: 30px;
+    padding-left: 10px;
+    border: 1px solid rgba(255, 255, 255, 50%);
+    background: transparent;
+    color: #fff;
+}
+
+.footer-email-input:focus {
+    outline: none;
+}
+
+.footer-subsribe-btn {
+    width: 40%;
+    height: 30px;
+    background-color: #FFFFFF;
+    color: #000;
+    border: none;
+}

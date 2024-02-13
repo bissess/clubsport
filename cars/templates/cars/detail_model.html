@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+
+{% block detail-model %}
+    <h1>{{ model_image.name }}</h1>
+    <img src="{{ model_image.image.url }}">
+{% endblock %}

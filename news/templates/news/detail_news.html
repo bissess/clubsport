@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block detail_news %}
+<link rel="stylesheet" href="{% static 'news/css/detail_news.css' %}">
+    <div class="back-to-feed">
+        <a class="back-link" href="{% url 'news:news' %}">COME BACK</a>
+    </div>
+
+    <section class="detail-post">
+        <div class="detail-post-wrapper">
+            <div class="post-category-date">
+                <div class="post-category">
+                    <span>NEWS</span><span>{{ post.category.name }}</span>
+                </div>
+                <div class="post-date">
+                    <span>{{ post.created_at|date }}</span>
+                </div>
+            </div>
+            <div class="post-image">
+                <img src="{{ post.image.url }}">
+            </div>
+            <div class="post-title">
+                <h1>{{ post.title }}</h1>
+            </div>
+            <div class="post-descr">
+                {% autoescape on %}
+                    <p>{{ post.description|linebreaks }}</p>
+                {% endautoescape %}
+            </div>
+            <div class="post-subscribe-socials">
+                <form class="post-subscribe">
+                    <input class="subscribe-input" placeholder="Your email...">
+                    <button class="subscribe-btn" type="submit">SUBSCRIBE</button>
+                </form>
+                <div class="post-socials">
+                    <a>1</a>
+                    <a>2</a>
+                    <a>3</a>
+                    <a>4</a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

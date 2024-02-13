@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block news %}
+<link rel="stylesheet" href="{% static 'news/css/index.css' %}">
+
+    <nav class="news-sidebar">
+        <ul class="web-nav">
+            <li><a class="web-nav-link" href="{% url 'cs:main' %}">HOME</a></li>
+            <li><a class="web-nav-link" href="{% url 'cars:main' %}">CARS</a></li>
+            <li><a class="web-nav-link" href="{% url 'news:news' %}">CSNEWS</a></li>
+        </ul>
+        <ul class="news-nav">
+            {% for category in categories_list %}
+                <li class="news-categories-item"><a class="news-categories-link" href="{{ category.get_absolute_url }}">{{ category.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </nav>
+
+    <main class="news-main">
+        <section class="news-search">
+            <input type="search" class="search-input" placeholder="SEARCH ...">
+        </section>
+
+        <section class="news-feed">
+            {% for post in posts %}
+            <div class="posts-wrapper">
+
+                <div class="post-image">
+                    <img src="{{ post.image.url }}">
+                </div>
+
+                <div class="post-text">
+                    <div class="post-category">
+                        <span>NEWS</span><span>{{ post.category.name }}</span>
+                    </div>
+
+                    <div class="post-title">
+                        <h2>{{ post.title }}</h2>
+                    </div>
+
+                    <div class="post-descr">
+                        <p>{{ post.description|truncatewords:50 }}</p>
+                    </div>
+
+                    <div class="post-detail">
+                         <a href="{{ post.get_absolute_url }}" class="post-detail-link">MORE</a>
+                         <span class="post-date">{{ post.created_at|date }}</span>
+                    </div>
+                </div>
+
+            </div>
+            {% endfor %}
+        </section>
+    </main>
+
+{% endblock %}

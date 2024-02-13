@@ -1,0 +1,118 @@
+.back-to-feed {
+    width: 90%;
+    margin: 0% auto;
+    height: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.back-link {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 50%);
+    transition: all .3s ease-in-out;
+}
+
+.back-link:hover {
+    color: #000;
+}
+
+.detail-post-wrapper {
+    width: 90%;
+    margin: 0% auto;
+    border: 1px solid rgba(0, 0, 0, .1);
+}
+
+.post-category-date {
+    width: 95%;
+    margin: 1% auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.post-category > span {
+    background-color: #1e1e1e;
+    color: #fff;
+    padding: 3px 5px;
+    margin: 0px 1px;
+    text-transform: uppercase;
+    font-size: 22px;
+}
+
+.post-date {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 50%);
+}
+
+.post-image {
+    width: 95%;
+    margin: 1% auto;
+    height: 500px;
+}
+
+.post-image > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.post-title {
+    width: 95%;
+    margin: 2% auto;
+}
+
+.post-title > h1 {
+    font-size: 30px;
+}
+
+.post-descr {
+    width: 95%;
+    margin: 2% auto;
+    font-size: 16px;
+}
+
+.post-subscribe-socials {
+    width: 95%;
+    margin: 0% auto;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+}
+
+.post-subscribe {
+    display: flex;
+}
+
+.subscribe-input {
+    width: 150px;
+    height: 25px;
+    border: 1px solid rgba(0, 0, 0, .1);
+    padding: 0px 10px;
+}
+
+.subscribe-input:focus {
+    outline: none;
+}
+
+.subscribe-btn {
+    width: 150px;
+    height: 25px;
+    margin-left: 5px;
+    border: none;
+    background-color: #1e1e1e;
+    color: #FFF;
+    transition: opacity .2s ease-in-out;
+    cursor: pointer;
+}
+
+.subscribe-btn:hover {
+    opacity: .7;
+}
+
+.post-socials > a {
+    background-color: #1e1e1e;
+    padding: 5px 10px;
+    color: #fff;
+}

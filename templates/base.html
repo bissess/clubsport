@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% block main %}
+    {% endblock %}
+
+    {% block news %}
+    {% endblock %}
+
+    {% block detail_news %}
+    {% endblock %}
+
+    {% block cars-main %}
+    {% endblock %}
+
+    {% block detail-model %}
+    {% endblock %}
+</body>
+</html>

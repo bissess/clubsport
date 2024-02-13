@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block cars-main %}
+  <link rel="stylesheet" href="{% static 'cars/css/cars.css' %}">
+    <main class="cars-main">
+      <nav class="cars-nav">
+        <nav class="web-nav">
+          <a class="home-link" href="{% url 'cs:main' %}">HOME</a>
+          <a class="news-link" href="{% url 'news:news' %}">NEWS</a>
+        </nav>
+        <nav class="brands-nav">
+
+          <ul class="all-brands">
+            <li><a>BRANDS</a></li>
+          </ul>
+
+          <ul class="brands-list">
+            {% for brand in brands %}
+              <li class="brands-item"><a class="brands-link" href="{{ brand.get_absolute_url }}">{{ brand.name }}</a></li>
+            {% endfor %}
+          </ul>
+
+        </nav>
+
+        <nav class="models-nav">
+
+          <ul class="all-models">
+            <li><a>MODELS</a></li>
+          </ul>
+
+          <ul class="models-list">
+            {% for model in models %}
+              <li class="models-item"><a class="models-link" href="{{ model.get_absolute_url }}">{{ model.name }}</a></li>
+            {% endfor %}
+          </ul>
+
+        </nav>
+      </nav>
+
+
+      <section class="cars-section">
+        {% if model_image %}
+          <img src="{{ model_image.image.url }}">
+        {% endif %}
+      </section>
+    </main>
+{% endblock %}

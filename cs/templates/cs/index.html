@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+    <link rel="stylesheet" href="{% static 'cs/css/index.css' %}">
+
+    <header class="main-header">
+        <div class="main-header-wrapper">
+            <div class="main-header-menu">
+                <button class="burger-menu-btn">
+                    <span></span>
+                    <span></span>
+                </button>
+                <a class="news-link" href="{% url 'news:news' %}">NEWS</a>
+            </div>
+            <a class="contact-link">CONTACTS</a>
+        </div>
+    </header>
+
+    <main class="cs-main">
+        <section class="welcome-page">
+            <div class="welcome-text">
+                <h1 class="welcome-title">CLUB SPORT</h1>
+                <h2 class="welcome-subtitle">EXPLORE THE AUTOMOTIVE WORLD</h2>
+                <div class="welcome-btn">
+                    <a class="explore-link" href="#">EXPLORE</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="cars-section">
+            <h2 class="cars-title">BRANDS</h2>
+            {% for cars in cars_images %}
+                <div class="cars-container">
+                    <img src="{{ cars }}" class="car-images">
+                </div>
+            {% endfor %}
+
+            <div class="cars-paginate">
+
+               {% for page_num in page_obj.paginator.page_range %}
+                    <span class="current">
+                        {% if page_num == page_obj.number %}
+                            <a href="?page={{ page_num }}" class="current-page"></a>
+                        {% else %}
+                            <a href="?page={{ page_num }}" class="pages"></a>
+                        {% endif %}
+                    </span>
+                {% endfor %}
+
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <div class="gallery-wrapper">
+                <div class="gallery-image-container"><img src="{% static 'cs/images/gallery-4.jpg' %}"></div>
+                <div class="gallery-image-container"><img src="{% static 'cs/images/gallery-2.jpg' %}"></div>
+                <div class="gallery-image-container"><img src="{% static 'cs/images/gallery-3.jpg' %}"></div>
+                <div class="gallery-image-container"><img src="{% static 'cs/images/gallery-1.jpg' %}"></div>
+            </div>
+        </section>
+
+        <section class="news-section">
+            <div class="news-wrapper">
+                    <div class="news-text">
+                        <div class="news-category">
+                            <span>NEWS</span><span>{{ posts.0.category.name }}</span>
+                        </div>
+                        <div class="news-title">
+                            <h1>{{ posts.0.title }}</h1>
+                        </div>
+                        <div class="news-descr">
+                            <p>{{ posts.0.description }}</p>
+                        </div>
+                        <div class="news-link">
+                            <a href="{% url 'news:news' %}">MORE</a>
+                            <span>{{ posts.0.created_at|date }}</span>
+                        </div>
+                    </div>
+                    <div class="news-image">
+                        <img src="{{ posts.0.image.url }}">
+                    </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="cs-footer">
+        <div class="footer-wrapper">
+            <h2 class="footer-title">CLUB SPORT</h2>
+
+            <form class="footer-form">
+                <p>SUBSCRIBE TO OUR NEWSLETTER FOR ADDITIONAL AND FRESH NEWS</p>
+                <div class="footer-subscribe">
+                    <input class="footer-email-input" type="text" placeholder="YOUR EMAIL ...">
+                    <button class="footer-subsribe-btn" type="submit">SUBSCRIBE</button>
+                </div>
+            </form>
+        </div>
+    </footer>
+{% endblock %}
